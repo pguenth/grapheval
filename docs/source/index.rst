@@ -1,0 +1,38 @@
+Welcome to GraphEval's documentation!
+=====================================
+
+GraphEval is a project which aims to simplify the task of evaluating data.
+It is especially useful if similar tasks should be performed with only slight variations.
+
+This works in three simple steps:
+
+ - First, splitting the whole pipeline into a set of atomic steps, which are called *nodes* (for example "Do a linear regression").
+
+ - Compile the nodes to a graph, essentially plugging their in- and outputs together.
+
+ - Request the result you want from the respective node.
+   
+The graph takes care of solving the dependencies (i.e. feeding every node with the required data) and eventually loading from and saving to cache.
+On top of that, results can also be visualized using the matplotlib wrapper *proplot* by giving every node the knowledge of how to add its results to a figure.
+
+Nodes are inherited from :py:class:`grapheval.node.EvalNode`.
+See there for a quick start.
+
+
+.. toctree::
+   :maxdepth: 4
+   :caption: Contents
+
+   evalnode
+   cache
+   nodefigure
+   graph
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+
+
