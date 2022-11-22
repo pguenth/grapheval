@@ -291,7 +291,12 @@ class PickleNodeCache(FileCache):
 
     @staticmethod
     def _write_file(file, obj):
-        pickle.dump(obj, file)
+        try:
+            pickle.dump(obj, file)
+        except TypeError as e:
+            logging.error("Pickling error with object of type {} into file {}.".format(type(obj), file))
+            logging.error("Object string repr".format(obj))
+            raise e
 
     def replace_kwargs_item(self, item):
         try:
