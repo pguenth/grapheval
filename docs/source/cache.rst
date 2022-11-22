@@ -1,5 +1,0 @@
-=====
-Cache
-=====
-
-.. automodule:: grapheval.cache
